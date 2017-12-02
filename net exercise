@@ -1,0 +1,95 @@
+//叠炮弹 
+/*#include<stdio.h>
+int getsum(int);
+main()
+{
+	int n;
+	scanf("%d",&n);
+	printf("%d",getsum(n));
+	
+	return 0;
+}
+int getsum(int x)
+{
+	if(x>0)
+	return x*x+getsum(x-1);
+}*/
+
+
+//欧几里得最大公约数
+
+/*#include<stdio.h>
+int getprim(int,int);
+main()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("%d",getprim(a,b));
+	
+	return 0;
+} 
+int getprim(int x,int y)
+{
+	int b,s;
+	if(x>=y)
+	{
+		b = x;
+		s = y;
+	}
+	else
+	{
+		b = y;
+		s = x;
+	}
+	if(b%s != 0)
+	return getprim(s,b%s);
+	else
+	return s;
+}*/
+
+//返回各位数字之和
+
+/*#include<stdio.h>
+int getnum(int);
+main()
+{
+	int num;
+	scanf("%d",&num);
+	printf("%d",getnum(num));
+	
+	return 0;
+}
+int getnum(x)
+{
+	while(x>0)
+	return x%10+getnum(x/10);
+	while(x == 0)
+	return 0;
+}*/
+
+//数字根
+
+/*#include<stdio.h> 
+int getroot(int);
+main()
+{
+	int num;
+	scanf("%d",&num);
+	printf("%d",getroot(num));
+	
+	return 0;
+}
+int getroot(int x)
+{
+	if(getnum(x)/10>0)
+	return getroot(getnum(x));
+	else
+	return getnum(x);
+}
+int getnum(x)
+{
+	while(x>0)
+	return x%10+getnum(x/10);
+	while(x == 0)
+	return 0;
+}*/
