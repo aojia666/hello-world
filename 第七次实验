@@ -1,0 +1,170 @@
+//1
+
+/*#include<stdio.h>
+main()
+{
+	int i,n,min = 100,max = 0;
+	double avr = 0;
+	int a[101];
+	scanf("%d",&n);
+	for(i = 1;i<=n;i++)
+	scanf("%d",&a[i]);
+	for(i = 1;i<=n;i++)
+	{
+		if(a[i]<min)
+		min = a[i];
+		if(a[i]>max)
+		max = a[i];
+		avr += a[i];
+	}
+	printf("%.2lf %d %d",avr/n,max,min);
+	
+	return 0;
+}*/
+
+
+//2
+
+/*#include<stdio.h>
+main()
+{
+	int n,m,i,j,flag;
+	int a[1001];
+	int b[101];
+	scanf("%d",&n);
+	for(i = 1;i<=n;i++)
+	scanf("%d",&a[i]);
+	scanf("%d",&m);
+	for(i = 1;i<=m;i++)
+	scanf("%d",&b[i]);
+	for(i = 1;i<=m;i++)
+	{
+		flag = 0;
+		for(j = 1;j<=n;j++)
+		{
+			if(a[j] == b[i])
+			{
+				if(j == 1&&j != n)
+				printf("%d\n",a[2]);
+				else if(j == n&&j != 1)
+				printf("%d\n",a[n-1]);
+				else if(j == 1&&j == n)
+				printf("NULL\n");
+				else
+				printf("%d %d\n",a[j-1],a[j+1]);
+				flag = 1;
+			}
+		}
+		if(!flag)
+		printf("NULL\n");
+	}
+	
+	return 0;
+}*/
+
+
+//3
+
+/*#include<stdio.h>
+main()
+{
+	int i,n,j,count = 1;
+	int a[201];
+	int ji[201],x = 1;
+	int ou[201],y = 1;
+	
+	scanf("%d",&n);
+	for(i = 1;i<=n;i++)
+	scanf("%d",&a[i]);
+	for(i = 1;i<=n;i++)
+	{
+		if(a[i]%2 == 0)
+		{
+			ou[x] = a[i];
+			x++;
+		}
+		else
+		{
+			ji[y] = a[i];
+			y++;
+		}
+	}
+	for(i = 1;i<=x-1;i++)
+		a[i] = ou[i];
+	for(i = x;i<=n;i++)
+	    a[i] = ji[i-x+1];
+	for(i = 1;i<=n;i++)
+	{
+		if(count == 1)
+		{
+			printf("%d",a[i]);
+			count++;
+		}
+		else
+		printf(" %d",a[i]);
+	}
+	
+	return 0;
+}*/
+
+//4
+
+/*#include<stdio.h>
+main()
+{
+	int i,n = 1,flag = 0;
+	char a[101];
+	a[1] = getchar();
+	while(a[n] != '#')
+	{
+		a[n+1] = getchar();
+		n++;
+	}
+	for(i = 1;i<=n-1;i++)
+	{
+		if(flag >= 0)
+		{
+			if(a[i] == '(')
+			flag++;
+			else if(a[i] == ')')
+			flag--;
+		}
+	}
+	if(flag == 0)
+	printf("YES");
+	else
+	printf("NO");
+	
+	return 0;
+}*/
+
+
+//5
+
+/*#include<stdio.h>
+main()
+{
+	int a[101];
+	int n,i,count,max = 1;
+	scanf("%d",&n);
+	for(i = 1;i<=n;i++)
+	scanf("%d",&a[i]);
+	i = 1;
+	
+	while(i<n)
+	{
+		count = 1;
+		while(a[i] == a[i+1]&&i<n)
+        {
+		    count++;
+		    i ++;
+	    }
+	    i++;
+		if(count>max)
+		max = count;
+	}
+	
+	printf("%d",max);
+	
+	return 0;
+}*/
