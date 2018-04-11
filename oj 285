@@ -1,0 +1,19 @@
+#include<stdio.h>
+main()
+{
+    char name[50];
+    scanf("%s",&name);
+    while(strcmp(name,"END") !=0)
+    {
+        if(strcmp(name,"Alice") == 0||strcmp(name,"Bob") == 0||
+                strcmp(name,"Lucky") == 0||strcmp(name,"Kitty") == 0 ||
+                strcmp(name,"Tim") == 0||strcmp(name,"Lucy") == 0||
+                strcmp(name,"Jim") == 0||strcmp(name,"Helena") == 0)
+            printf("NO\n");
+        else
+            printf("YES\n");
+        scanf("%s",&name);
+
+    }
+    return 0;
+}

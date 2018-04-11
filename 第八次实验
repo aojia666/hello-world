@@ -1,0 +1,178 @@
+//1
+
+/*#include<stdio.h>
+void Insert(int a[],int x);
+main()
+{
+	int a[1001];
+	int n,i,count = 1;
+	scanf("%d",&n);
+	for(i = 1;i<=n;i++)
+	scanf("%d",&a[i]);
+	
+	for(i = 2;i<=n;i++)
+	Insert(a,i);
+	
+	for(i = 1;i<=n;i++)
+	{
+		if(count == 1)
+		{
+			printf("%d",a[1]);
+			count++;
+		}
+		else
+		printf(" %d",a[i]);
+	}
+	printf("\n");
+	
+	return 0;
+}
+void Insert(int a[],int x)
+{
+	int i,current,j;
+	current = a[x];
+	for(i = 1;a[x]>=a[i]&&i<x;i++)
+	;
+	for(j = x;j>i;j--)
+	a[j] = a[j-1];
+	
+	a[i] = current;
+}*/
+
+//2
+
+/*#include<stdio.h>
+int Recur(int a[],int start,int last,int key);
+main()
+{
+	int n,x,i;
+	int a[1000];
+	scanf("%d", &n);
+	for (i = 0;i < n;i++)
+		scanf("%d", &a[i]);
+	scanf("%d",&x);
+	printf("%d", Recur(a,0,n-1,x));
+	
+	return 0;
+}
+int Recur(int a[],int start,int last,int x)
+{
+	if (start == last)
+		return -1;
+	if (a[start] == x)
+		return start;
+	if (a[start]<x)
+		return Recur(a,start+1,last,x);
+	else
+		return Recur(a,0,start-1,x);
+}*/
+
+//3
+
+/*#include<stdio.h>
+int main()
+{
+	int n,row,col=0,current,m;
+	scanf("%d",&n);
+	int a[n][n];
+	int sum[n];
+	for(row = 0;row<n;row++)
+	{ 
+	    col=0;
+		sum[row]=0;
+		for(;col<n;col++)
+		{
+			scanf("%d",&a[row][col]);
+			sum[row]+=a[row][col];
+		}
+	}
+	
+	for(row=1;row<n;row++)
+	 for(col=row-1;col>=0;col--)
+	 {
+	 	if(sum[col]>sum[col+1])
+	 	{
+	 		current = sum[col];
+			sum[col] = sum[col+1];
+			sum[col+1] = current;
+	 	    for(m = 0;m<n;m++)
+	 	    {
+	 		    current = a[col][m];
+			    a[col][m] = a[col+1][m];
+			    a[col+1][m] = current;
+		    }
+		}
+	 }
+	for(row=0;row<n;row++)
+	{
+		for(col=0;col<n-1;col++)
+		printf("%d ",a[row][col]);
+		printf("%d\n",a[row][n-1]);
+	}
+	
+	return 0;
+}*/
+
+
+//4
+
+/*#include<stdio.h>
+main()
+{
+	char a[101];
+	int i = 1,count;
+	char x;
+	a[1] = getchar();
+	while(a[i] != '\n')
+	{
+		a[i+1] = getchar();
+		i++;
+	}
+	scanf("%c",&x);
+	for(count = 1;count <= i;count++)
+	{
+		if(a[count] == x)
+		;
+		else
+		printf("%c",a[count]);
+	}
+	
+	return 0;
+}*/
+
+
+//5
+
+/*#include<stdio.h>
+void selectKing(int a[],int n,int m);
+main()
+{
+   int i,m,n;
+   int a[101];
+   scanf("%d",&n);
+   scanf("%d",&m); 
+      
+   for(i=1;i<=n-1;i++)
+         a[i]=i+1;
+   a[n]=1;
+      
+   selectKing(a,n,m);
+   
+   return 0;
+}
+void selectKing(int a[],int n,int m)
+{
+   int count,prei,i;
+   count=0;
+   i=n;
+   while(a[i]!=i){
+      count++; //报数 
+      prei=i;
+      i=a[i];
+      if(count%m==0){//出圈
+           a[prei]=a[i];
+           i=prei; //下次循环准备
+      }
+   }
+   printf("%d",i);
+}*/
